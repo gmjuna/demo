@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: install cowsy program
-          run: apt-get install cowsy -y
+          run: sudo apt install cowsy -y
 
         - name: exicuting cowsy
           run: cowsy -f dragon "dragon devops learning" >> dragon.txt
