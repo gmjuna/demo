@@ -12,16 +12,21 @@ jobs:
         - name: exicuting cowsay
           run: cowsay -f dragon "dragon devops learning" >> dragon.txt
 
-        - name: Sleep time 30 seconds
-          run: sleep 30
+        - name: upload the dragon text file
+          uses: actions/upload-artifact@v4
+          with:
+           name: Dragon text file
+           path: dragon.txt
     
     test_job_2:
         needs: [build_job_1]
         runs-on: ubuntu-latest
         steps:
-        - name: sleep on 10 second
-          run: sleep 10
-        
+        - name: download the dragon text file
+          uses: actions/download-artifact@v4
+          with:
+             name: Dragon text file
+
         - name: testing files
           run: grep -i "dragon" dragon.txt
 
@@ -29,6 +34,10 @@ jobs:
         needs: test_job_2
         runs-on: ubuntu-latest
         steps:
+        - name: download the dragon text file
+          uses: actions/download-artifact@v4
+          with:
+            name: Dragon text file
         - name: read files
           run: cat dragon.txt
 
