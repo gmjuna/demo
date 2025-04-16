@@ -3,16 +3,32 @@ name: Gentrate ASCII Artwork
 on: push
 
 jobs:
-    first_job:
+    build_job_1:
         runs-on: ubuntu-latest
         steps:
-        - name: Checkout Repo
-          uses: actions/checkout@v4
-        
-        - name: Listing Files
-          run: ls -ltra
+        - name: install cowsy program
+          run: apt install cowsy -y
 
-        - name: shell script
-          run: |
-            chmod -R +x script.sh
-            ./script.sh
+        - name: exicuting cowsy
+          run: cowsy -f dragon "dragon devops learning" >> dragon.txt
+
+        - name: Sleep time 30 seconds
+          run: sleep 30
+    
+    test_job_2:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sleep on 10 second
+          run: sleep 10
+        
+        - name: testing files
+          run: grep -i "dragon" dragon.txt
+
+    deploy_job_3:
+        runs-on: ubuntu-latest
+        steps:
+        - name: read files
+          run: cat dragon.txt
+
+        - name: deploy
+          run: echo Deploying .....
