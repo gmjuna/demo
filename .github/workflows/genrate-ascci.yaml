@@ -10,7 +10,7 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Install cowsay Program
-          run: sudo apt-get install cowsay -y
+          run: sudo apt install cowsay -y
 
         - name: Genrate ASCII Artwork
           run: cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt 
