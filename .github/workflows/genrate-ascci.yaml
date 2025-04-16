@@ -14,5 +14,5 @@ jobs:
 
         - name: shell script
           run: |
-            chmod -R +x asccii.sh
-            ./asccii.sh
+            chmod -R +x ascci.sh
+            ./ascci.sh
