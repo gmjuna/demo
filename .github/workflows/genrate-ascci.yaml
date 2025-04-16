@@ -7,14 +7,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-        - name: update
-          run: sudo apt-get update
+        - name: install cowsay program
+          run: apt install cowsay -y
 
-        - name: install cowsy program
-          run: sudo apt-get install cowsy -y
-
-        - name: exicuting cowsy
-          run: cowsy -f dragon "dragon devops learning" >> dragon.txt
+        - name: exicuting cowsay
+          run: cowsay -f dragon "dragon devops learning" >> dragon.txt
 
         - name: Sleep time 30 seconds
           run: sleep 30
