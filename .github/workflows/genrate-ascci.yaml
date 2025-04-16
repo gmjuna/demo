@@ -8,7 +8,7 @@ jobs:
         steps:
 
         - name: install cowsay program
-          run: apt install cowsay -y
+          run: apt-get install cowsay -y
 
         - name: exicuting cowsay
           run: cowsay -f dragon "dragon devops learning" >> dragon.txt
