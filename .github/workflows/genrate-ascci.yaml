@@ -8,10 +8,10 @@ jobs:
         steps:
 
         - name: update
-          run: apt update
+          run: sudo apt-get update
 
         - name: install cowsy program
-          run: apt install cowsy -y
+          run: sudo apt-get install cowsy -y
 
         - name: exicuting cowsy
           run: cowsy -f dragon "dragon devops learning" >> dragon.txt
