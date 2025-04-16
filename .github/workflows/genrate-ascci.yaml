@@ -13,4 +13,6 @@ jobs:
           run: ls -ltra
 
         - name: shell script
-          run: ./asccii.sh
+          run: |
+            chmod -R +x asccii.sh
+            ./asccii.sh
