@@ -42,4 +42,4 @@ jobs:
           run: cat dragon.txt
 
         - name: deploy
-          run: echo Deploying .....
+          run: echo Deploying ..... .
