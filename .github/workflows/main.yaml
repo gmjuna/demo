@@ -19,4 +19,4 @@ jobs:
 
     - name: Run container
       run: |
-        docker run -d -p 8080:80 my-app
+        docker run -d -p 9090:80 my-app2
